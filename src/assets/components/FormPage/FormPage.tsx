@@ -1,7 +1,7 @@
 import styles from "./formPage.module.scss";
 import { ChangeEvent, FormEvent, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { UpdatedData } from "../../../../../server/interfaces/interfaces";
+import { UpdatedData } from "../../interfaces/interfaces";
 import { Posts } from "../../interfaces/interfaces";
 import { POSTS } from "../../api/url";
 import image from "../../img/close.png";

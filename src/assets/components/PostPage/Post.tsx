@@ -4,6 +4,7 @@ import { Posts } from "../../interfaces/interfaces";
 import { Link } from "react-router-dom";
 import styles from "../Main/main.module.scss";
 import { POSTS, USER } from "../../api/url";
+import { Preloader } from "../Preloader/preloader";
 
 export function PostPage() {
   const [post, setPost] = useState<Posts | undefined>();
@@ -96,6 +97,7 @@ export function PostPage() {
             <p>email: {post.author.email}</p>
           </>
         )}
+        {!post && <Preloader />}
       </div>
     </>
   );

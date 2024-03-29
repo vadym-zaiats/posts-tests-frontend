@@ -15,3 +15,10 @@ export interface Author {
   posts: string;
   createDate: string;
 }
+
+export interface UpdatedData {
+  title: string;
+  text: string;
+  genre: string;
+  isPrivate: boolean;
+}

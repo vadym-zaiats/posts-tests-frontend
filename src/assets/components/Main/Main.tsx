@@ -1,10 +1,11 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import styles from "./main.module.scss";
 import { Link } from "react-router-dom";
-import { Posts } from "../../../../../server/db/entity/Posts";
+import { Posts } from "../../interfaces/interfaces";
 import { Card } from "../Card/Card";
 import { REGISTER, POSTS, LOGIN } from "../../api/url";
 import close from "../../img/close.png";
+import { Preloader } from "../Preloader/preloader";
 
 export function Main() {
   const [posts, setPosts] = useState<
@@ -12,7 +13,7 @@ export function Main() {
   >();
 
   const [skip, setSkip] = useState<number>(0);
-  const [take] = useState<number>(8);
+  const [take] = useState<number>(4);
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isReg, setIsReg] = useState<boolean>(false);
@@ -235,6 +236,7 @@ export function Main() {
           posts.allPosts.map((post: Posts) => {
             return <Card key={post.id} post={post} />;
           })}
+        {!posts && <Preloader />}
       </ul>
       {skip !== 0 && (
         <button
