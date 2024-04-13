@@ -66,8 +66,6 @@ export function PostPage() {
     }
   }, [author, post]);
 
-  console.log(post);
-
   return (
     <>
       {isAuthor && (
