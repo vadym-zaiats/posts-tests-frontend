@@ -14,6 +14,8 @@ export interface Author {
   password: string;
   posts: string;
   createDate: string;
+  sendNotification: boolean;
+  notificationChannel: string;
 }
 
 export interface UpdatedData {
